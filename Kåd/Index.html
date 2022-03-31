@@ -1,0 +1,105 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        Kladdkaka
+    </title>
+
+    <style>
+        body {
+            color: red;
+            background-color: rgb(192, 255, 200);
+        }
+
+        h1 {
+            color: rgb(109, 47, 255);
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 8em;
+        }
+
+        p {
+            font-size: 2em;
+            color: black;
+        }
+
+        .tjenix {
+            font-size: 10em;
+            color: rgb(128, 58, 0);
+        }
+
+        #test {
+            font-size: 4em;
+            color: indianred;
+        }
+    </style>
+
+    <script>
+        
+    </script>
+
+</head>
+
+
+<main>
+
+</main>
+
+
+<body>
+    <h1>
+    Klocka ish
+    </h1>
+
+    <p>
+        Tid
+    </p>
+
+    <button onclick="updateTime()">
+        Hit me
+    </button>
+
+    <p id="time">
+
+    </p>
+
+    <p id="alarm">
+
+    </p>
+
+    <p id="test">
+        
+    </p>
+
+    <p class="tjenix">
+        ://
+    </p>
+
+    <script> // script tag runs on page load
+
+        let clock = new Clock(13, 37)
+
+        let alarm = "13:50"
+
+        document.getElementById("time").innerHTML = clock.time
+
+        function updateTime() {
+            clock.tick()
+            document.getElementById("time").innerHTML = clock.time
+            if (clock.time == alarm) {
+                document.getElementById("alarm").innerHTML = "VAKNA"
+
+            }
+        }
+
+        window.setInterval(updateTime, 1000)
+
+    </script>
+
+</body>
+
+</html>
